@@ -7,6 +7,7 @@ import Sort from "../components/Sort";
 const Home = () => {
   const [models, setModels] = useState(null);
   const [sort, setSort] = useState("");
+  const [filter, setFilter] = useState("ALL");
 
   useEffect(() => {
     fetch("https://challenge.egodesign.dev/api/models/")
@@ -35,13 +36,28 @@ const Home = () => {
     }
   };
 
-    const visibleModels = applySort(models);
+  const applyFilter = (data) => {
+    switch (filter) {
+      case "AUTOS":
+        return data.filter(
+          (m) => m.segment !== "Pickups y Comerciales" && m.segment !== "SUVs"
+        );
+      case "PICKUPS":
+        return data.filter((m) => m.segment === "Pickups y Comerciales");
+      case "SUVS":
+        return data.filter((m) => m.segment === "SUVs");
+      default:
+        return data;
+    }
+  };
+
+  const visibleModels = applySort(applyFilter(models));
 
   return (
     <>
       <Menu />
       <div>Home Page</div>
-      <Filters />
+      <Filters activeFilter={filter} onChange={setFilter} />
       <Sort activeSort={sort} onChange={setSort} />
       <ModelsGrid models={visibleModels} />
     </>
