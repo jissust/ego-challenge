@@ -16,14 +16,14 @@
 }
 .sort-options {
     position: absolute;
-    left: 0;
+    right: 0;
     top: 25px;
     padding: 0;
     text-decoration: none;
     list-style: none;
     width: 170px;
     box-shadow: 2px 8px 20px 0px #00000026;
-
+    background-color: #FFFFFF;
 }
 .sort-options li {
     font-weight: 400;

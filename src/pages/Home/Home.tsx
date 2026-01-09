@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Filters from "../../components/Filters";
+import Filters from "../../components/Filters/Filters";
 import Menu from "../../components/Menu/Menu";
 import ModelsGrid from "../../components/ModelsGrid";
 import Sort from "../../components/Sort/Sort";
@@ -10,7 +10,7 @@ const Home = () => {
   /*////comentado momentaneamente para usar datos mocks
   const [models, setModels] = useState(null);*/
   const [sort, setSort] = useState("");
-  const [filter, setFilter] = useState("ALL");
+  const [filter, setFilter] = useState("");
 
   /* //comentado momentaneamente para usar datos mocks
   useEffect(() => {
@@ -63,9 +63,11 @@ const Home = () => {
       <div className="container container-custom">
         <h1 className="h1-title h1-space-xy">Descubrí todos los modelos</h1>
       </div>
-      <div className="container container-custom d-flex justify-content-between align-items-center">
-      <Filters activeFilter={filter} onChange={setFilter} />
-      <Sort activeSort={sort} onChange={setSort} />
+      <div className="container container-custom">
+        <div className="d-flex justify-content-between align-items-center border-bottom-gray pb-3 pb-md-2 ">
+          <Filters activeFilter={filter} onChange={setFilter} />
+          <Sort activeSort={sort} onChange={setSort} />
+        </div>
       </div>
       <ModelsGrid models={visibleModels} />
     </>

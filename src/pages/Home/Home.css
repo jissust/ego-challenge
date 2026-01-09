@@ -11,7 +11,9 @@
 .h1-space-xy {
     padding: 43px 0 38px 0;
 }
-
+.border-bottom-gray {
+    border-bottom: 1px solid #EFEEEF
+}
 @media (min-width: 992px) { 
     .h1-title {
         font-size: 50px;

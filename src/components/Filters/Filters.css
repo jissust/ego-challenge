@@ -1,0 +1,72 @@
+.filters {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0.08px;
+    color: #373737;
+ }
+.filters-button{
+    border: none;
+    background-color: transparent;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0.08px;
+    text-align: center;
+    padding: 9px 18px;
+}
+.filters-button:hover {
+    cursor: pointer;
+    text-decoration: none;
+    background: #F7F7F7;
+    border-radius: 18px; 
+}
+.filters-button.active {
+    background: #F7F7F7;
+    border-radius: 18px;    
+}
+
+.filters-mobile{
+    position: relative;
+}
+.filters-trigger {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0.08px;
+    text-align: right;
+    color: #373737;
+    display: flex;
+    gap: 10px;
+}
+.filters-trigger:hover {
+    cursor: pointer;
+}
+.filters-options {
+    position: absolute;
+    left: 0;
+    top: 25px;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    width: 170px;
+    box-shadow: 2px 8px 20px 0px #00000026;
+    background-color: #FFFFFF;
+}
+.filters-options li {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 35px;
+    letter-spacing: -0.1px;
+    border-bottom: 1px solid #EFEEEF;
+    padding: 0 16px;
+}
+.filters-options li:hover {
+    background: #D1D6D634;
+    cursor: pointer;
+}
+.filters-options li.active{
+    background: #D1D6D634;
+}
