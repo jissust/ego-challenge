@@ -1,0 +1,60 @@
+.models-grid {
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+.model-link {
+    text-decoration: none;
+    color: #000000;
+    text-align: center;
+}
+.model-name {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 30px;
+    letter-spacing: -0.65px;
+    text-align: center;
+    margin-bottom: 8px;
+    transition: all ease 0.5s;
+}
+.model-price-year {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: -0.28px;
+    margin-bottom: 8px;
+}
+.model-img {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.model-img img {
+    max-width: 228px;
+} 
+.model-container-button {
+    min-height: 35px;
+}
+.model-button {
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 23px;
+    letter-spacing: 0.07px;
+    text-align: center;
+    background-color: #000000;
+    color: #FFFFFF;
+    border-radius: 40px;
+    padding: 4px 36px;
+    opacity: 0;
+    transition: all ease 0.5s;
+}
+.model-link:hover .model-button {
+    opacity: 1;
+}
+.model-link:hover .model-name {
+    color: #EB0A1E;
+}

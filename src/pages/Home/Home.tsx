@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Filters from "../../components/Filters/Filters";
 import Menu from "../../components/Menu/Menu";
-import ModelsGrid from "../../components/ModelsGrid";
+import ModelsGrid from "../../components/ModelsGrid/ModelsGrid";
 import Sort from "../../components/Sort/Sort";
 import './Home.css';
 import {models} from "../../mocks/models.json";
