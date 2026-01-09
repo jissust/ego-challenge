@@ -33,10 +33,31 @@
     line-height: 27px;
     letter-spacing: -0.1px;
 }
+.model-detail-info {
+    margin-bottom:54px;
+    color: #373737;
+}
+.model-detail-info img {
+    border-radius: 5px;
+}
+.model-detail-info__h2 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    letter-spacing: -0.4px;
+    margin: 15px 0 20px 0;
+}
+.model-detail-info__p {
+    max-width: 385px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 27px;
+    letter-spacing: -0.1px;
+}   
 @media (min-width: 992px) { 
     .model-detail-hero__name {
         font-size: 50px;
         line-height: 57px;
         letter-spacing: -1px;
-    }    
+    }
 }
