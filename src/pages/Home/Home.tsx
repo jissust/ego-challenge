@@ -1,14 +1,18 @@
 import { useEffect, useState } from "react";
-import Filters from "../components/Filters";
-import Menu from "../components/Menu/Menu";
-import ModelsGrid from "../components/ModelsGrid";
-import Sort from "../components/Sort";
+import Filters from "../../components/Filters";
+import Menu from "../../components/Menu/Menu";
+import ModelsGrid from "../../components/ModelsGrid";
+import Sort from "../../components/Sort";
+import './Home.css';
+import {models} from "../../mocks/models.json";
 
 const Home = () => {
-  const [models, setModels] = useState(null);
+  /*////comentado momentaneamente para usar datos mocks
+  const [models, setModels] = useState(null);*/
   const [sort, setSort] = useState("");
   const [filter, setFilter] = useState("ALL");
 
+  /* //comentado momentaneamente para usar datos mocks
   useEffect(() => {
     fetch("https://challenge.egodesign.dev/api/models/")
       .then((response) => response.json())
@@ -16,7 +20,7 @@ const Home = () => {
         setModels(data);
       })
       .catch((error) => console.error("Error fetching models:", error));
-  }, []);
+  }, []);*/
 
   if (!models) return <div>Cargando...</div>;
 
@@ -56,7 +60,9 @@ const Home = () => {
   return (
     <>
       <Menu />
-      <div>Home Page</div>
+      <div className="container container-custom">
+        <h1 className="h1-title h1-space-xy">Descubrí todos los modelos</h1>
+      </div>
       <Filters activeFilter={filter} onChange={setFilter} />
       <Sort activeSort={sort} onChange={setSort} />
       <ModelsGrid models={visibleModels} />

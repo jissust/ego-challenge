@@ -1,0 +1,24 @@
+.container-custom {
+    max-width: 1140px !important;
+}
+.h1-title {
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 44px;
+    letter-spacing: -0.7px;
+    color: #373737;
+}
+.h1-space-xy {
+    padding: 43px 0 38px 0;
+}
+
+@media (min-width: 992px) { 
+    .h1-title {
+        font-size: 50px;
+        line-height: 57px;
+        letter-spacing: -1px;
+    }
+    .h1-space-xy {
+        padding: 85px 0 72px 0;
+    }    
+}
