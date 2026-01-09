@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Filters from "../../components/Filters";
 import Menu from "../../components/Menu/Menu";
 import ModelsGrid from "../../components/ModelsGrid";
-import Sort from "../../components/Sort";
+import Sort from "../../components/Sort/Sort";
 import './Home.css';
 import {models} from "../../mocks/models.json";
 
@@ -63,8 +63,10 @@ const Home = () => {
       <div className="container container-custom">
         <h1 className="h1-title h1-space-xy">Descubrí todos los modelos</h1>
       </div>
+      <div className="container container-custom d-flex justify-content-between align-items-center">
       <Filters activeFilter={filter} onChange={setFilter} />
       <Sort activeSort={sort} onChange={setSort} />
+      </div>
       <ModelsGrid models={visibleModels} />
     </>
   );
