@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Menu from "../components/Menu";
+import Menu from "../components/Menu/Menu";
 
 const ModelDetail = () => {
   const { id } = useParams();

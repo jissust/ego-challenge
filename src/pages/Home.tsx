@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Filters from "../components/Filters";
-import Menu from "../components/Menu";
+import Menu from "../components/Menu/Menu";
 import ModelsGrid from "../components/ModelsGrid";
 import Sort from "../components/Sort";
 
