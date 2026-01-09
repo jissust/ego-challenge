@@ -1,0 +1,42 @@
+.model-detail-hero {
+    color: #373737;
+    padding:40px 0;
+}
+.model-detail-hero__info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.model-detail-hero-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.model-detail-hero-image-container img {
+    max-height: 320px;
+}
+.model-detail-hero__segment {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    letter-spacing: 0px;
+}
+.model-detail-hero__name {
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 44px;
+    letter-spacing: -0.7px;
+}
+.model-detail-hero__p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 27px;
+    letter-spacing: -0.1px;
+}
+@media (min-width: 992px) { 
+    .model-detail-hero__name {
+        font-size: 50px;
+        line-height: 57px;
+        letter-spacing: -1px;
+    }    
+}
