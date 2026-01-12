@@ -4,15 +4,12 @@ import Menu from "../../components/Menu/Menu";
 import ModelsGrid from "../../components/ModelsGrid/ModelsGrid";
 import Sort from "../../components/Sort/Sort";
 import './Home.css';
-import {models} from "../../mocks/models.json";
 
 const Home = () => {
-  /*////comentado momentaneamente para usar datos mocks
-  const [models, setModels] = useState(null);*/
+  const [models, setModels] = useState(null);
   const [sort, setSort] = useState("");
   const [filter, setFilter] = useState("");
 
-  /* //comentado momentaneamente para usar datos mocks
   useEffect(() => {
     fetch("https://challenge.egodesign.dev/api/models/")
       .then((response) => response.json())
@@ -20,7 +17,7 @@ const Home = () => {
         setModels(data);
       })
       .catch((error) => console.error("Error fetching models:", error));
-  }, []);*/
+  }, []);
 
   if (!models) return <div>Cargando...</div>;
 

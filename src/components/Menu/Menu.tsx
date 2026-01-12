@@ -49,7 +49,7 @@ const Menu = () => {
 
         <div
           className="offcanvas offcanvas-end offcanvas-custom"
-          tabIndex="-1"
+          tabIndex={-1}
           id="offcanvasNavbar"
           aria-labelledby="offcanvasNavbarLabel"
         >
