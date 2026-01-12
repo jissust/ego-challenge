@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# EGO AGENCY - FRONTEND DEVELOPER - CHALLENGE TÉCNICO
+La aplicación permite visualizar un listado de modelos de autos, aplicar filtros y ordenamientos, y acceder al detalle de cada modelo.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## ⚙️ Instalación y ejecución local
 
-Currently, two official plugins are available:
+Seguí estos pasos para clonar y levantar el proyecto en tu entorno local:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1️⃣ Clonar el repositorio
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/jissust/ego-challenge.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2️⃣ Ingresar al directorio del proyecto
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+cd ego-challenge
 ```
+
+3️⃣ Instalar dependencias
+
+```bash
+npm install
+```
+
+4️⃣ Levantar el proyecto en modo desarrollo
+
+```bash
+npm run dev
+```
+
+5️⃣ Abrir en el navegador
+
+```bash
+http://localhost:5173
+```
+
+## 🚀 Demo (Ambiente de prueba)
+
+El proyecto se encuentra deployado y disponible para su visualización en el siguiente enlace:
+
+👉 **https://ego-challenge-jesustissera.netlify.app/**
+
+## 🛠️ Tecnologías utilizadas
+
+- **React + TypeScript**  
+  Desarrollo de interfaces modernas, tipadas y escalables.
+
+- **Vite**  
+  Entorno de desarrollo rápido y liviano.
+
+- **Bootstrap**  
+  Utilizado para reutilizar componentes, sistema de grillas y clases utilitarias.
+
+- **Componentes reutilizables**  
+  Arquitectura basada en componentes desacoplados y reutilizables.
+
+- **React Router DOM**  
+  Manejo de rutas para Home y Ficha de modelo.
+
+- **Swiper**  
+  Implementación del carrusel de imágenes en la ficha de detalle.
