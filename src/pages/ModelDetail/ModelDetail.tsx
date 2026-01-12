@@ -66,7 +66,7 @@ const ModelDetail = () => {
           </div>
         </div>
       </div>
-      <div className="model-detail-info">
+      <div className="model-detail-info model-detail-info--bottom">
         <div className="container container-custom">
           <div className="row">
             <div className="col-12 col-md-6">

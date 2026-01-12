@@ -34,8 +34,11 @@
     letter-spacing: -0.1px;
 }
 .model-detail-info {
-    margin-bottom:54px;
+    margin-top:54px;
     color: #373737;
+}
+.model-detail-info--bottom {
+    margin-bottom:100px;
 }
 .model-detail-info img {
     border-radius: 5px;
