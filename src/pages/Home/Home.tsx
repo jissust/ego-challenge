@@ -3,7 +3,9 @@ import Filters from "../../components/Filters/Filters";
 import Menu from "../../components/Menu/Menu";
 import ModelsGrid from "../../components/ModelsGrid/ModelsGrid";
 import Sort from "../../components/Sort/Sort";
+import Footer from "../../components/Footer/Footer";
 import './Home.css';
+
 
 const Home = () => {
   const [models, setModels] = useState(null);
@@ -55,19 +57,22 @@ const Home = () => {
   const visibleModels = applySort(applyFilter(models));
 
   return (
-    <>
+    <div className="layout">
       <Menu />
-      <div className="container container-custom">
-        <h1 className="h1-title h1-space-xy">Descubrí todos los modelos</h1>
-      </div>
-      <div className="container container-custom">
-        <div className="d-flex justify-content-between align-items-center border-bottom-gray pb-3 pb-md-2 ">
-          <Filters activeFilter={filter} onChange={setFilter} />
-          <Sort activeSort={sort} onChange={setSort} />
+      <main>
+        <div className="container container-custom">
+          <h1 className="h1-title h1-space-xy">Descubrí todos los modelos</h1>
         </div>
-      </div>
-      <ModelsGrid models={visibleModels} />
-    </>
+        <div className="container container-custom">
+          <div className="d-flex justify-content-between align-items-center border-bottom-gray pb-3 pb-md-2 ">
+            <Filters activeFilter={filter} onChange={setFilter} />
+            <Sort activeSort={sort} onChange={setSort} />
+          </div>
+        </div>
+        <ModelsGrid models={visibleModels} />
+      </main>
+      <Footer />
+    </div>
   );
 };
 export default Home;

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Menu from "../../components/Menu/Menu";
 import Carousel from "../../components/Carousel/Carousel";
+import Footer from "../../components/Footer/Footer";
 import "./ModelDetail.css";
 
 const ModelDetail = () => {
@@ -20,6 +21,7 @@ const ModelDetail = () => {
   if (!model) return <div>Cargando...</div>;
 
   return (
+    <>
     <div>
       <Menu />
       <div className="model-detail-hero">
@@ -88,6 +90,8 @@ const ModelDetail = () => {
         </div>
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 export default ModelDetail;
