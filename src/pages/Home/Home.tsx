@@ -4,6 +4,7 @@ import Menu from "../../components/Menu/Menu";
 import ModelsGrid from "../../components/ModelsGrid/ModelsGrid";
 import Sort from "../../components/Sort/Sort";
 import Footer from "../../components/Footer/Footer";
+import Preload from "../../components/Preload/Preload";
 import './Home.css';
 
 
@@ -21,7 +22,7 @@ const Home = () => {
       .catch((error) => console.error("Error fetching models:", error));
   }, []);
 
-  if (!models) return <div>Cargando...</div>;
+  if (!models) return <Preload />;
 
   const applySort = (data) => {
     const sorted = [...data];

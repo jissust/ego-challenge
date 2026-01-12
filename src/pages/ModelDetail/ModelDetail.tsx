@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import Menu from "../../components/Menu/Menu";
 import Carousel from "../../components/Carousel/Carousel";
 import Footer from "../../components/Footer/Footer";
+import Preload from "../../components/Preload/Preload";
 import "./ModelDetail.css";
 
 const ModelDetail = () => {
@@ -18,7 +19,7 @@ const ModelDetail = () => {
       .catch((error) => console.error("Error fetching model:", error));
   }, [id]);
 
-  if (!model) return <div>Cargando...</div>;
+  if (!model) return <Preload />;
 
   return (
     <>
