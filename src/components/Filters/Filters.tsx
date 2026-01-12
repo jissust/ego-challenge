@@ -19,7 +19,7 @@ const Filters = ({ activeFilter, onChange }) => {
   return (
     <>
       <div className="filters d-md-flex d-none">
-        <div className="filters-text">Filtrar por: </div>
+        <div className="filters-text">Filtrar por </div>
         {FILTERS.map((filter) => (
           <button
             className={
@@ -40,7 +40,7 @@ const Filters = ({ activeFilter, onChange }) => {
           className={`filters-trigger ${open ? "open" : ""}`}
           onClick={() => setOpen(!open)}
         >
-          <span>{selectedOption ? selectedOption.label : "Filtrar por"}</span>
+          <span>{selectedOption ? selectedOption.label : "Filtrar por "}</span>
           <span className="arrow">
             {open ? (
               <img src={arrowUp} alt="Up arrow" />

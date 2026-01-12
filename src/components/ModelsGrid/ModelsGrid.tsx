@@ -10,7 +10,7 @@ const ModelsGrid = ({ models }) => {
     <div className="container container-custom models-grid">
       <div className="row">
         {models.map((model) => (
-          <div className="col-12 col-md-6 col-lg-3 pb-4" key={model.id}>
+          <div className="col-12 col-md-6 col-lg-3 pb-3" key={model.id}>
             <Link className="model-link" to={`/model/${model.id}`}>
               <div>
                 <div className="model-name">{model.name}</div>

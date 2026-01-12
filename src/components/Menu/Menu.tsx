@@ -8,7 +8,7 @@ const Menu = () => {
   return (
     <nav className="navbar navbar-current">
       <div className="container-fluid container-nav d-flex align-items-center">
-        <div className="d-flex align-items-center gap-4">
+        <div className="d-flex align-items-center container-nav-links">
           <NavLink className="navbar-brand" to="/">
             <img
               src={logo}
@@ -17,7 +17,7 @@ const Menu = () => {
             />
           </NavLink>
 
-          <div className="nav-links d-none d-md-flex gap-4 ms-4">
+          <div className="nav-links d-none d-md-flex ms-4">
             <NavLink
               to="/"
               end
