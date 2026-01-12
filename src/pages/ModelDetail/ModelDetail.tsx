@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Menu from "../../components/Menu/Menu";
+import Carousel from "../../components/Carousel/Carousel";
 import "./ModelDetail.css";
 
 const ModelDetail = () => {
@@ -44,7 +45,7 @@ const ModelDetail = () => {
           </div>
         </div>
       </div>
-      <div className="model-detail-carrusel">Carrusel</div>
+      <Carousel items={model.model_features} />
       <div className="model-detail-info">
         <div className="container container-custom">
           <div className="row">
