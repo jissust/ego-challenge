@@ -5,10 +5,20 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const Carousel = ({ items = [] }) => {
+interface ModelFeature {
+  name: string;
+  description: string;
+  image: string;
+}
+
+interface CarouselProps {
+  items?: ModelFeature[];
+}
+
+const Carousel = ({ items = [] }:CarouselProps) => {
   if (!Array.isArray(items) || items.length === 0) return null;
 
-  const duplicateItems = (items, minLength) => {
+  const duplicateItems = (items:ModelFeature[], minLength:number):ModelFeature[] => {
     if (items.length >= minLength) return items;
 
     const result = [...items];
@@ -22,7 +32,7 @@ const Carousel = ({ items = [] }) => {
     return result;
   };
 
-  items = duplicateItems(items, 8);
+  const extendedItems = duplicateItems(items, 8);
 
   return (
     <div className="container-fluid model-detail-carrusel">
@@ -48,7 +58,7 @@ const Carousel = ({ items = [] }) => {
           },
         }}
       >
-        {items.map((feature, index) => (
+        {extendedItems.map((feature, index) => (
           <SwiperSlide key={`${feature.name}-${index}`}>
             <div className="">
               <img src={feature.image} alt={feature.name} />

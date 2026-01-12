@@ -3,10 +3,15 @@ import arrowUp from "../../../src/assets/arrow-up.png";
 import arrowDown from "../../../src/assets/arrow-down.png";
 import "./Sort.css";
 
-const Sort = ({ activeSort, onChange }) => {
+interface SortProps {
+  activeSort: string;
+  onChange: (value: string) => void;
+}
+
+const Sort = ({ activeSort, onChange }: SortProps) => {
   const [open, setOpen] = useState(false);
   
-  const getSortLabel = (activeSort) => {
+  const getSortLabel = (activeSort:string) => {
     switch (activeSort) {
       case "PRICE_ASC":
         return "De menor a mayor precio";
@@ -21,7 +26,7 @@ const Sort = ({ activeSort, onChange }) => {
     }
   };
 
-  const handleSelect = (value) => {
+  const handleSelect = (value:string) => {
     onChange(value);
     setOpen(false);
   };

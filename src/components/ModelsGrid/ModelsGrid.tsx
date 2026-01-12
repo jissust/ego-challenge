@@ -1,8 +1,20 @@
 import { Link } from "react-router-dom";
 import "./ModelsGrid.css";
 
-const ModelsGrid = ({ models }) => {
-  const formatPrice = (value) => {
+export interface Model {
+  id: number;
+  name: string;
+  year: number;
+  price: number;
+  thumbnail: string;
+}
+
+interface ModelsGridProps {
+  models: Model[];
+}
+
+const ModelsGrid = ({ models }: ModelsGridProps) => {
+  const formatPrice = (value:number) => {
     return new Intl.NumberFormat("es-AR").format(value);
   };
 

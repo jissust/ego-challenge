@@ -7,9 +7,17 @@ import Footer from "../../components/Footer/Footer";
 import Preload from "../../components/Preload/Preload";
 import './Home.css';
 
+interface Model {
+  id: number;
+  name: string;
+  price: number;
+  year: number;
+  segment: string;
+  thumbnail: string;
+}
 
 const Home = () => {
-  const [models, setModels] = useState(null);
+  const [models, setModels] = useState<Model[] | null>(null);
   const [sort, setSort] = useState("");
   const [filter, setFilter] = useState("");
 
@@ -24,7 +32,7 @@ const Home = () => {
 
   if (!models) return <Preload />;
 
-  const applySort = (data) => {
+  const applySort =  (data: Model[]): Model[] => {
     const sorted = [...data];
     switch (sort) {
       case "PRICE_ASC":
@@ -40,7 +48,7 @@ const Home = () => {
     }
   };
 
-  const applyFilter = (data) => {
+  const applyFilter =  (data: Model[]): Model[] => {
     switch (filter) {
       case "AUTOS":
         return data.filter(

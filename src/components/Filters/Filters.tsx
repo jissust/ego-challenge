@@ -3,7 +3,6 @@ import { useState } from "react";
 import arrowUp from "../../../src/assets/arrow-up.png";
 import arrowDown from "../../../src/assets/arrow-down.png";
 
-
 const FILTERS = [
   { label: "Todos", value: "ALL" },
   { label: "Autos", value: "AUTOS" },
@@ -11,7 +10,12 @@ const FILTERS = [
   { label: "SUVs y crossovers", value: "SUVS" },
 ];
 
-const Filters = ({ activeFilter, onChange }) => {
+interface FiltersProps {
+  activeFilter: string,
+  onChange: (value: string) => void,
+}
+
+const Filters = ({ activeFilter, onChange }: FiltersProps) => {
   const [open, setOpen] = useState(false);
   
   const selectedOption = FILTERS.find(o => o.value === activeFilter);

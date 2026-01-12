@@ -6,9 +6,31 @@ import Footer from "../../components/Footer/Footer";
 import Preload from "../../components/Preload/Preload";
 import "./ModelDetail.css";
 
+interface ModelFeature {
+  name: string;
+  description: string;
+  image: string;
+}
+
+interface ModelHighlight {
+  title: string;
+  content: string;
+  image: string;
+}
+
+interface ModelDetail {
+  id: number;
+  name: string;
+  segment: string;
+  description: string;
+  photo: string;
+  model_features: ModelFeature[];
+  model_highlights: ModelHighlight[];
+}
+
 const ModelDetail = () => {
   const { id } = useParams();
-  const [model, setModel] = useState(null);
+  const [model, setModel] = useState<ModelDetail | null>(null);
 
   useEffect(() => {
     fetch(`https://challenge.egodesign.dev/api/models/${id}`)
