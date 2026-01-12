@@ -1,5 +1,8 @@
 import "./Filters.css";
 import { useState } from "react";
+import arrowUp from "../../../src/assets/arrow-up.png";
+import arrowDown from "../../../src/assets/arrow-down.png";
+
 
 const FILTERS = [
   { label: "Todos", value: "ALL" },
@@ -40,9 +43,9 @@ const Filters = ({ activeFilter, onChange }) => {
           <span>{selectedOption ? selectedOption.label : "Filtrar por"}</span>
           <span className="arrow">
             {open ? (
-              <img src="../../src/assets/arrow-up.png" alt="Up arrow" />
+              <img src={arrowUp} alt="Up arrow" />
             ) : (
-              <img src="../../src/assets/arrow-down.png" alt="Down arrow" />
+              <img src={arrowDown} alt="Down arrow" />
             )}
           </span>
         </div>

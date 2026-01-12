@@ -1,5 +1,8 @@
 import "./Menu.css";
 import { NavLink } from "react-router-dom";
+import logo from "../../../src/assets/logo.png";
+import gray from "../../../src/assets/gray.png";
+import close from "../../../src/assets/close.png";
 
 const Menu = () => {
   return (
@@ -8,7 +11,7 @@ const Menu = () => {
         <div className="d-flex align-items-center gap-4">
           <NavLink className="navbar-brand" to="/">
             <img
-              src="../../../src/assets/logo.png"
+              src={logo}
               alt="Logo"
               className="d-inline-block align-text-top"
             />
@@ -59,7 +62,7 @@ const Menu = () => {
             </h5>*/}
             <NavLink className="navbar-brand" to="/">
               <img
-                src="../../../src/assets/logo.png"
+                src={logo}
                 alt="Logo"
                 className="d-inline-block align-text-top"
               />
@@ -77,7 +80,7 @@ const Menu = () => {
               aria-label="Close"
             >
               <img
-                src="../../../src/assets/gray.png"
+                src={gray}
                 alt="Logo"
                 className="d-inline-block align-text-top"
               />
@@ -93,7 +96,7 @@ const Menu = () => {
                 aria-label="Close"
                 >
                 <img
-                    src="../../../src/assets/close.png"
+                    src={close}
                     alt="Logo"
                     className="d-inline-block align-text-top"
                 />
