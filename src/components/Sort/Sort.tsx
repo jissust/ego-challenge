@@ -1,4 +1,6 @@
 import { useState } from "react";
+import arrowUp from "../../../src/assets/arrow-up.png";
+import arrowDown from "../../../src/assets/arrow-down.png";
 import "./Sort.css";
 
 const Sort = ({ activeSort, onChange }) => {
@@ -33,9 +35,9 @@ const Sort = ({ activeSort, onChange }) => {
         <span>{getSortLabel(activeSort)}</span>
         <span className="arrow">
           {open ? (
-            <img src="../../src/assets/arrow-up.png" alt="Up arrow" />
+            <img src={arrowUp} alt="Up arrow" />
           ) : (
-            <img src="../../src/assets/arrow-down.png" alt="Down arrow" />
+            <img src={arrowDown} alt="Down arrow" />
           )}
         </span>
       </div>
