@@ -1,10 +1,12 @@
 import "./Menu.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useMatch } from "react-router-dom";
 import logo from "../../../src/assets/logo.png";
 import gray from "../../../src/assets/gray.png";
 import close from "../../../src/assets/close.png";
 
 const Menu = () => {
+  const isModelDetail = useMatch("/model/:id");
+
   return (
     <nav className="navbar navbar-current">
       <div className="container-fluid container-nav d-flex align-items-center">
@@ -30,8 +32,8 @@ const Menu = () => {
 
             <NavLink
               to="/model/1"
-              className={({ isActive }) =>
-                `nav-item-link ${isActive ? "active" : ""}`
+              className={() =>
+                `nav-item-link ${isModelDetail ? "active" : ""}`
               }
             >
               Ficha de modelo
