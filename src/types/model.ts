@@ -25,3 +25,6 @@ export interface ModelDetail {
   model_features: ModelFeature[];
   model_highlights: ModelHighlight[];
 }
+export interface ModelsGridProps {
+  models: Model[];
+}
