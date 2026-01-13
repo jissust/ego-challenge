@@ -4,29 +4,8 @@ import Menu from "../../components/Menu/Menu";
 import Carousel from "../../components/Carousel/Carousel";
 import Footer from "../../components/Footer/Footer";
 import Preload from "../../components/Preload/Preload";
+import type { ModelDetail } from "../../types";
 import "./ModelDetail.css";
-
-interface ModelFeature {
-  name: string;
-  description: string;
-  image: string;
-}
-
-interface ModelHighlight {
-  title: string;
-  content: string;
-  image: string;
-}
-
-interface ModelDetail {
-  id: number;
-  name: string;
-  segment: string;
-  description: string;
-  photo: string;
-  model_features: ModelFeature[];
-  model_highlights: ModelHighlight[];
-}
 
 const ModelDetail = () => {
   const { id } = useParams();

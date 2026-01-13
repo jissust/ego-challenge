@@ -1,19 +1,10 @@
 import "./Carousel.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
+import type { ModelFeature, CarouselProps } from "../../types";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
-interface ModelFeature {
-  name: string;
-  description: string;
-  image: string;
-}
-
-interface CarouselProps {
-  items?: ModelFeature[];
-}
 
 const Carousel = ({ items = [] }:CarouselProps) => {
   if (!Array.isArray(items) || items.length === 0) return null;

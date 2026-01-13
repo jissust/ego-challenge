@@ -1,12 +1,8 @@
 import { useState } from "react";
 import arrowUp from "../../../src/assets/arrow-up.png";
 import arrowDown from "../../../src/assets/arrow-down.png";
+import type { SortProps } from "../../types";
 import "./Sort.css";
-
-interface SortProps {
-  activeSort: string;
-  onChange: (value: string) => void;
-}
 
 const Sort = ({ activeSort, onChange }: SortProps) => {
   const [open, setOpen] = useState(false);

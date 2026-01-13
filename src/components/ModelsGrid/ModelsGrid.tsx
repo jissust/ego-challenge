@@ -1,17 +1,6 @@
 import { Link } from "react-router-dom";
+import type { ModelsGridProps  } from "../../types";
 import "./ModelsGrid.css";
-
-export interface Model {
-  id: number;
-  name: string;
-  year: number;
-  price: number;
-  thumbnail: string;
-}
-
-interface ModelsGridProps {
-  models: Model[];
-}
 
 const ModelsGrid = ({ models }: ModelsGridProps) => {
   const formatPrice = (value:number) => {

@@ -1,7 +1,8 @@
-import "./Filters.css";
 import { useState } from "react";
+import type { FiltersProps } from "../../types";
 import arrowUp from "../../../src/assets/arrow-up.png";
 import arrowDown from "../../../src/assets/arrow-down.png";
+import "./Filters.css";
 
 const FILTERS = [
   { label: "Todos", value: "ALL" },
@@ -9,11 +10,6 @@ const FILTERS = [
   { label: "Pickups y Comerciales", value: "PICKUPS" },
   { label: "SUVs y crossovers", value: "SUVS" },
 ];
-
-interface FiltersProps {
-  activeFilter: string,
-  onChange: (value: string) => void,
-}
 
 const Filters = ({ activeFilter, onChange }: FiltersProps) => {
   const [open, setOpen] = useState(false);

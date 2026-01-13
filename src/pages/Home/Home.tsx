@@ -5,16 +5,8 @@ import ModelsGrid from "../../components/ModelsGrid/ModelsGrid";
 import Sort from "../../components/Sort/Sort";
 import Footer from "../../components/Footer/Footer";
 import Preload from "../../components/Preload/Preload";
+import type { Model } from "../../types";
 import './Home.css';
-
-interface Model {
-  id: number;
-  name: string;
-  price: number;
-  year: number;
-  segment: string;
-  thumbnail: string;
-}
 
 const Home = () => {
   const [models, setModels] = useState<Model[] | null>(null);
