@@ -1,8 +1,7 @@
+export type FilterType = "AUTOS" | "PICKUPS" | "SUVS" | "ALL" | "";
+
 export interface FiltersProps {
   activeFilter: string;
-  onChange: (value: string) => void;
+  onChange: (value: FilterType) => void;
 }
-export interface SortProps {
-  activeSort: string;
-  onChange: (value: string) => void;
-}
+

@@ -1,10 +1,10 @@
 import { useState } from "react";
-import type { FiltersProps } from "../../types";
+import type { FiltersProps, FilterType } from "../../types";
 import arrowUp from "../../../src/assets/arrow-up.png";
 import arrowDown from "../../../src/assets/arrow-down.png";
 import "./Filters.css";
 
-const FILTERS = [
+const FILTERS: { label: string; value: FilterType }[] = [
   { label: "Todos", value: "ALL" },
   { label: "Autos", value: "AUTOS" },
   { label: "Pickups y Comerciales", value: "PICKUPS" },

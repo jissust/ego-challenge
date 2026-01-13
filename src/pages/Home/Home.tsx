@@ -5,13 +5,13 @@ import ModelsGrid from "../../components/ModelsGrid/ModelsGrid";
 import Sort from "../../components/Sort/Sort";
 import Footer from "../../components/Footer/Footer";
 import Preload from "../../components/Preload/Preload";
-import type { Model } from "../../types";
+import type { Model, SortType, FilterType } from "../../types";
 import './Home.css';
 
 const Home = () => {
   const [models, setModels] = useState<Model[] | null>(null);
-  const [sort, setSort] = useState("");
-  const [filter, setFilter] = useState("");
+  const [sort, setSort] = useState<SortType>("");
+  const [filter, setFilter] = useState<FilterType>("");
 
   useEffect(() => {
     fetch("https://challenge.egodesign.dev/api/models/")
