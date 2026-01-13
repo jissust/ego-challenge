@@ -31,6 +31,7 @@ interface ModelDetail {
 const ModelDetail = () => {
   const { id } = useParams();
   const [model, setModel] = useState<ModelDetail | null>(null);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
     fetch(`https://challenge.egodesign.dev/api/models/${id}`)
@@ -41,7 +42,7 @@ const ModelDetail = () => {
       .catch((error) => console.error("Error fetching model:", error));
   }, [id]);
 
-  if (!model) return <Preload />;
+  if (!model && !imageLoaded) return <Preload />;
 
   return (
     <>
@@ -52,7 +53,7 @@ const ModelDetail = () => {
           <div className="row">
             <div className="col-12 col-md-6 model-detail-hero__image">
               <div className="model-detail-hero-image-container">
-                <img src={model.photo} alt={model.name} className="img-fluid" />
+                <img src={model.photo} alt={model.name} className="img-fluid" onLoad={ () => setImageLoaded(true)} />
               </div>
             </div>
             <div className="col-12 col-md-6 model-detail-hero__info">
