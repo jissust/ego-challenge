@@ -10,7 +10,7 @@ import Preload from "../../components/Preload/Preload";
 
 const Home = () => {
   const { loading } = useModels();
-  console.log(`Loading:  ${loading}`)
+  
   if(loading) return <Preload />  
   return (
     <ModelsProvider>
