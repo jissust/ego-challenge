@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
-import type { ModelsGridProps  } from "../../types";
 import "./ModelsGrid.css";
+import { useModels } from "../../hooks/useModels";
 
-const ModelsGrid = ({ models }: ModelsGridProps) => {
+
+const ModelsGrid = () => {
+  const { visibleModels } = useModels();
+  
   const formatPrice = (value:number) => {
     return new Intl.NumberFormat("es-AR").format(value);
   };
@@ -10,7 +13,7 @@ const ModelsGrid = ({ models }: ModelsGridProps) => {
   return (
     <div className="container container-custom models-grid">
       <div className="row">
-        {models.map((model) => (
+        {visibleModels.map((model) => (
           <div className="col-12 col-md-6 col-lg-3 pb-3" key={model.id}>
             <Link className="model-link" to={`/model/${model.id}`}>
               <div>

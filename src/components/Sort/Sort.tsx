@@ -1,14 +1,17 @@
 import { useState } from "react";
 import arrowUp from "../../../src/assets/arrow-up.png";
 import arrowDown from "../../../src/assets/arrow-down.png";
-import type { SortProps, SortType } from "../../types";
+import type { SortType } from "../../types";
 import "./Sort.css";
+import { useModels } from "../../hooks/useModels";
 
-const Sort = ({ activeSort, onChange }: SortProps) => {
+
+const Sort = () => {
   const [open, setOpen] = useState(false);
-  
-  const getSortLabel = (activeSort:SortType) => {
-    switch (activeSort) {
+  const { sort, setSort } = useModels();
+ 
+  const getSortLabel = (sort:SortType) => {
+    switch (sort) {
       case "PRICE_ASC":
         return "De menor a mayor precio";
       case "PRICE_DESC":
@@ -23,7 +26,7 @@ const Sort = ({ activeSort, onChange }: SortProps) => {
   };
 
   const handleSelect = (value:SortType) => {
-    onChange(value);
+    setSort(value);
     setOpen(false);
   };
 
@@ -33,7 +36,7 @@ const Sort = ({ activeSort, onChange }: SortProps) => {
         className={`sort-trigger ${open ? "open" : ""}`}
         onClick={() => setOpen(!open)}
       >
-        <span>{getSortLabel(activeSort)}</span>
+        <span>{getSortLabel(sort)}</span>
         <span className="arrow">
           {open ? (
             <img src={arrowUp} alt="Up arrow" />
@@ -47,35 +50,35 @@ const Sort = ({ activeSort, onChange }: SortProps) => {
         <ul className="sort-options">
           <li
             key="NONE"
-            className={"NONE" === activeSort || activeSort === "" ? "active" : ""}
+            className={"NONE" === sort || sort === "" ? "active" : ""}
             onClick={() => handleSelect("NONE")}
           >
             Nada
           </li>
           <li
             key="PRICE_ASC"
-            className={"PRICE_ASC" === activeSort ? "active" : ""}
+            className={"PRICE_ASC" === sort ? "active" : ""}
             onClick={() => handleSelect("PRICE_ASC")}
           >
             De <b>Menor</b> a <b>mayor</b> precio
           </li>
           <li
             key="PRICE_DESC"
-            className={"PRICE_DESC" === activeSort ? "active" : ""}
+            className={"PRICE_DESC" === sort ? "active" : ""}
             onClick={() => handleSelect("PRICE_DESC")}
           >
             De <b>Mayor</b> a <b>menor</b> precio
           </li>
           <li
             key="YEAR_DESC"
-            className={"YEAR_DESC" === activeSort ? "active" : ""}
+            className={"YEAR_DESC" === sort ? "active" : ""}
             onClick={() => handleSelect("YEAR_DESC")}
           >
             Más nuevos primero
           </li>
           <li
             key="YEAR_ASC"
-            className={"YEAR_ASC" === activeSort ? "active" : ""}
+            className={"YEAR_ASC" === sort ? "active" : ""}
             onClick={() => handleSelect("YEAR_ASC")}
           >
             Más viejos primero

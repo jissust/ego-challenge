@@ -4,12 +4,12 @@ import Menu from "../../components/Menu/Menu";
 import Carousel from "../../components/Carousel/Carousel";
 import Footer from "../../components/Footer/Footer";
 import Preload from "../../components/Preload/Preload";
-import type { ModelDetail } from "../../types";
+import type { ModelFeatures } from "../../types";
 import "./ModelDetail.css";
 
 const ModelDetail = () => {
   const { id } = useParams();
-  const [model, setModel] = useState<ModelDetail | null>(null);
+  const [model, setModel] = useState<ModelFeatures | null>(null);
   const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {

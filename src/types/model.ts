@@ -16,7 +16,7 @@ export interface ModelHighlight {
   content: string;
   image: string;
 }
-export interface ModelDetail {
+export interface ModelFeatures {
   id: number;
   name: string;
   segment: string;

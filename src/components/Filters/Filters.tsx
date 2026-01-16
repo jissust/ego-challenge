@@ -1,5 +1,6 @@
 import { useState } from "react";
-import type { FiltersProps, FilterType } from "../../types";
+import type { FilterType } from "../../types";
+import { useModels } from "../../hooks/useModels";
 import arrowUp from "../../../src/assets/arrow-up.png";
 import arrowDown from "../../../src/assets/arrow-down.png";
 import "./Filters.css";
@@ -11,26 +12,26 @@ const FILTERS: { label: string; value: FilterType }[] = [
   { label: "SUVs y crossovers", value: "SUVS" },
 ];
 
-const Filters = ({ activeFilter, onChange }: FiltersProps) => {
+const Filters = () => {
   const [open, setOpen] = useState(false);
-  
-  const selectedOption = FILTERS.find(o => o.value === activeFilter);
+  const { filter, setFilter } = useModels(); 
+  const selectedOption = FILTERS.find(o => o.value === filter);
   
   return (
     <>
       <div className="filters d-md-flex d-none">
         <div className="filters-text">Filtrar por </div>
-        {FILTERS.map((filter) => (
+        {FILTERS.map((filterItem) => (
           <button
             className={
-              filter.value === activeFilter
+              filterItem.value === filter
                 ? "filters-button active"
                 : "filters-button"
             }
-            key={filter.value}
-            onClick={() => onChange(filter.value)}
+            key={filterItem.value}
+            onClick={() => setFilter(filterItem.value)}
           >
-            {filter.label}
+            {filterItem.label}
           </button>
         ))}
       </div>
@@ -51,18 +52,18 @@ const Filters = ({ activeFilter, onChange }: FiltersProps) => {
         </div>
         {open && (
           <ul className="filters-options">
-            {FILTERS.map((filter) => (
+            {FILTERS.map((filterItem) => (
               <li
                 className={
-                  filter.value === activeFilter ? "active" : ""
+                  filterItem.value === filter ? "active" : ""
                 }
-                key={filter.value}
+                key={filterItem.value}
                 onClick={() => {
-                  onChange(filter.value);
+                  setFilter(filterItem.value);
                   setOpen(false);
                 }}
               >
-                {filter.label}
+                {filterItem.label}
               </li>
             ))}
           </ul>
