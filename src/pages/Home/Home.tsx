@@ -5,8 +5,13 @@ import Sort from "../../components/Sort/Sort";
 import Footer from "../../components/Footer/Footer";
 import './Home.css';
 import { ModelsProvider } from "../../context/ModelsProvider";
+import { useModels } from "../../hooks/useModels";
+import Preload from "../../components/Preload/Preload";
 
 const Home = () => {
+  const { loading } = useModels();
+  console.log(`Loading:  ${loading}`)
+  if(loading) return <Preload />  
   return (
     <ModelsProvider>
     <div className="layout">
